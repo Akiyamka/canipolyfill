@@ -5,14 +5,17 @@ export default {
     // CORS headers
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Content-Type": "application/json",
+      "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Max-Age": "86400",
     };
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      return new Response(null, { headers: corsHeaders });
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders,
+      });
     }
 
     try {
@@ -27,7 +30,10 @@ export default {
             error: 'Missing "targets" or "query" parameter',
             example: "/?targets=> 0.5%, last 2 versions",
           }),
-          { status: 400, headers: corsHeaders },
+          {
+            status: 400,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          },
         );
       }
 
@@ -42,7 +48,7 @@ export default {
 
       return new Response(JSON.stringify(response, null, 2), {
         status: 200,
-        headers: corsHeaders,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     } catch (error) {
       return new Response(
@@ -53,7 +59,7 @@ export default {
         }),
         {
           status: 500,
-          headers: corsHeaders,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
         },
       );
     }

@@ -3,7 +3,7 @@ interface ViteTypeOptions {
 }
 
 interface ImportMetaEnv {
-  readonly WORKER_ENDPOINT: string
+  readonly VITE_WORKER_ENDPOINT: string
 }
 
 interface ImportMeta {
