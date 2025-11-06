@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "login": "wrangler login",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "logs": "wrangler tail"
   },
   "devDependencies": {
     "wrangler": "^4.45.4"

@@ -7,12 +7,12 @@ export function createAppState() {
   const $modules = signal(new Array<string>());
   const $error = signal<null | string>(null);
 
-  const setTargetQuery = (query: string) => {
+  const setTargetQuery = async (query: string) => {
     const error = validateQuery(query);
     $error.value = error;
 
     if (!error) {
-      $modules.value = getModulesByQuery(query);
+      $modules.value = (await getModulesByQuery(query)).polyfills;
     }
   };
 

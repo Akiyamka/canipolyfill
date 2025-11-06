@@ -1,4 +1,4 @@
-import { list as getPolyfills } from "core-js-compat";
+import compat from "core-js-compat";
 
 export default {
   async fetch(request, env, ctx) {
@@ -31,14 +31,12 @@ export default {
         );
       }
 
-      const result = getPolyfills({
-        targets: targets,
-      });
+      const { list } = compat({ targets: targets });
 
       const response = {
         targets: targets,
-        polyfills: result,
-        count: result.length,
+        polyfills: list,
+        count: list.length,
         timestamp: new Date().toISOString(),
       };
 
