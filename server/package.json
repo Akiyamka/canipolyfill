@@ -1,0 +1,13 @@
+{
+  "name": "canipolyfill-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "echo build"
+  },
+  "dependencies": {
+    "@types/node": "^24.10.0",
+    "core-js-compat": "^3.46.0"
+  }
+}
