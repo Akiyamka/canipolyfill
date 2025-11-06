@@ -1,5 +1,6 @@
 import http from "node:http";
 import compat from "core-js-compat";
+import type { PolyfilsDto } from '@canipolyfill/types';
 
 const PORT = process.env.PORT || 3000;
 
@@ -30,7 +31,7 @@ const server = http.createServer((req, res) => {
         filter: features.length > 0 ? features : undefined,
       });
 
-      const response = {
+      const response: PolyfilsDto = {
         targets: targets,
         polyfills: list,
         count: list.length,

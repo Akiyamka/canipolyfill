@@ -1,5 +1,5 @@
 {
-  "name": "canipolyfill-server",
+  "name": "@canipolyfill/server",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,7 +8,8 @@
     "start": "node --experimental-transform-types ./main.ts"
   },
   "dependencies": {
-    "@types/node": "^24.10.0",
-    "core-js-compat": "^3.46.0"
+    "@types/node": "catalog:node",
+    "core-js-compat": "^3.46.0",
+    "@canipolyfill/types": "workspace:*"
   }
 }

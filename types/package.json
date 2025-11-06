@@ -1,0 +1,15 @@
+{
+  "name": "@canipolyfill/types",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+     ".": {
+       "types": "./src/index.d.ts"
+     }
+   },
+   "types": "./src/index.d.ts",
+   "files": [
+     "src"
+   ]
+}

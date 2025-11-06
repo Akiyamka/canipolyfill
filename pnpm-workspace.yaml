@@ -1,0 +1,9 @@
+packages:
+  - 'cf-worker'
+  - 'client'
+  - 'server'
+  - 'types'
+
+catalogs:
+  node:
+    '@types/node': ^24.10.0
