@@ -1,0 +1,16 @@
+{
+  "name": "canipolyfill-worker",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "login": "wrangler login",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.4"
+  },
+  "dependencies": {
+    "core-js-compat": "^3.46.0"
+  }
+}
